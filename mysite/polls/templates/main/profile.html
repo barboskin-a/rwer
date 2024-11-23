@@ -1,0 +1,13 @@
+{% extends "layout/index.html" %}
+
+{% load bootstrap4 %}
+
+{% block title %} Профиль {% endblock %}
+
+{% block content %}
+    <h2>Ваш профиль, {{ user.username }}</h2>
+    <form method="post">
+        {% csrf_token %}
+    <b>Имя пользователя:</b>{{ user.username }}
+    </form>
+{% endblock %}
