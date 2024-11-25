@@ -1,13 +1,51 @@
-<!--{% extends "layout/index.html" %}-->
-<!--{% load bootstrap4 %}-->
-<!--{% if latest_question_list %}-->
-<!--    <ul>-->
-<!--        {% for question in latest_question_list %}-->
-<!--            <li><a href="{% url 'main:detail' question.id %}">{{ question.question_text }}</a></li>-->
-<!--        {% endfor %}-->
-<!--    </ul>-->
-<!--{% else %}-->
-<!--    <p>-->
-<!--        Нет вопросов!-->
-<!--    </p>-->
-<!--{% endif %}-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/main/style.css">
+    <title>{% block title %} Главная {% endblock %}</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="">
+        <div class="nav-item dropdown">
+            <div class="dropdown_header">
+                <div class="nav_dropdown_header">
+                    <a class="p-2 text-dark" href="{% url 'main:login' %}">Вход</a>
+                    <a class="nav-link" href="{% url 'main:register' %}">Регистрация</a>
+                </div>
+            </div>
+            <div class="dropdown_menu_head">
+                <h2>meow</h2>
+                {% block content %}
+
+                {% endblock %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <footer class="mt-3 border-top"></footer>
+</body>
+<style>
+.dropdown_header{
+    display: flex;
+
+}
+.container-fluid{
+    width: 100vw;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.dropdown-toggle{
+    margin-left: 70%;
+}
+
+.text-dark
+    margin-left: 5%;
+
+</style>
+</html>

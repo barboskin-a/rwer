@@ -684,7 +684,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                 self.send_header("Location", new_url)
                 self.end_headers()
                 return None
-            for index in "index.html", "index.htm":
+            for index in "welcome_message.html", "index.htm":
                 index = os.path.join(path, index)
                 if os.path.exists(index):
                     path = index
@@ -740,7 +740,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             raise
 
     def list_directory(self, path):
-        """Helper to produce a directory listing (absent index.html).
+        """Helper to produce a directory listing (absent welcome_message.html).
 
         Return value is either a file object, or None (indicating an
         error).  In either case, the headers are sent, making the
