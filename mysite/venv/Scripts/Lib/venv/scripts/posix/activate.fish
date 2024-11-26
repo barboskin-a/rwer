@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "C:\Users\gr431_shiero\Desktop\practica-django-2--main\venv"
+set -gx VIRTUAL_ENV "C:\Users\gr431_shiero\Desktop\practica-django-2--main\mysite\venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/Scripts" $PATH

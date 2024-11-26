@@ -2365,7 +2365,7 @@ def _url_handler(url, content_type="text/html"):
             </div>
             <div style='float:right'>
                 <div style='text-align:center'>
-                  <a href="welcome_message.html">Module Index</a>
+                  <a href="index.html">Module Index</a>
                   : <a href="topics.html">Topics</a>
                   : <a href="keywords.html">Keywords</a>
                 </div>

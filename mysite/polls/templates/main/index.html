@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,9 +11,18 @@
     <div class="">
         <div class="nav-item dropdown">
             <div class="dropdown_header">
+                {% if user.is_authenticated %}
+                <p>Привет, {{ user.username }}! <a href="{% url 'main:logout' %}">Выйти</a></p>
+                {% else %}
                 <div class="nav_dropdown_header">
-                    <a class="p-2 text-dark" href="{% url 'main:login' %}">Вход</a>
+                    <a class="nav-link" href="{% url 'main:login' %}">Вход</a>
                     <a class="nav-link" href="{% url 'main:register' %}">Регистрация</a>
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-success">{{ message }}</div>
+                    {% endfor %}
+                    {% endif %}
+                {% endif %}
                 </div>
             </div>
             <div class="dropdown_menu_head">
@@ -29,6 +39,38 @@
     <footer class="mt-3 border-top"></footer>
 </body>
 <style>
+*{
+    max-width: 100%
+    margin: 0 auto;
+}
+body{
+    display: flex;
+    margin-left: 50px;
+    width: 100%;
+    margin-right: 50px;
+}
+
+.dropdown_header {
+    padding-top: 1%;
+    margin-left: 70%;
+}
+
+.nav_dropdown_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.nav_dropdown_header{
+    margin-left: 37%;
+}
+
+.row {
+    margin-top: 5%;
+}
+
 .dropdown_header{
     display: flex;
 
@@ -44,8 +86,24 @@
     margin-left: 70%;
 }
 
-.text-dark
-    margin-left: 5%;
+.text-dark{
+   margin-left: 5%;
+}
 
+.nav_dropdown_header a {
+    color: black;
+    background-color: #d7e7ff;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5% 7% 5% 7%;
+}
+
+.nav_dropdown_header a:hover{
+    color: black;
+    background-color: #b9d6ff;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5% 7% 5% 7%;
+}
 </style>
 </html>

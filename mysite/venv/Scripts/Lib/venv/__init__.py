@@ -323,11 +323,11 @@ class EnvBuilder:
         :param context: The information for the environment creation request
                         being processed.
         """
-        text = text.replace('C:\Users\gr431_shiero\Desktop\practica-django-2--main\venv', context.env_dir)
+        text = text.replace('C:\Users\gr431_shiero\Desktop\practica-django-2--main\mysite\venv', context.env_dir)
         text = text.replace('venv', context.env_name)
         text = text.replace('(venv) ', context.prompt)
         text = text.replace('Scripts', context.bin_name)
-        text = text.replace('C:\Users\gr431_shiero\Desktop\practica-django-2--main\venv\Scripts\python.exe', context.env_exe)
+        text = text.replace('C:\Users\gr431_shiero\Desktop\practica-django-2--main\mysite\venv\Scripts\python.exe', context.env_exe)
         return text
 
     def install_scripts(self, context, path):

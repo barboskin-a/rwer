@@ -1,0 +1,19 @@
+{% extends 'main/index.html' %}
+
+{% block content %}
+  <h2>Регистрация</h2>
+
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Это должно корректно отображать форму -->
+    <button type="submit">Зарегистрироваться</button>
+  </form>
+{% endblock %}

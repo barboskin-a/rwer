@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\gr431_shiero\Desktop\practica-django-2--main\venv"
+VIRTUAL_ENV="C:\Users\gr431_shiero\Desktop\practica-django-2--main\mysite\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
